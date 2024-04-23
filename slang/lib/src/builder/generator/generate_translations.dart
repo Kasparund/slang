@@ -863,6 +863,13 @@ void _addContextCall({
     }
   }
 
+  // TODO: remove once protobuf changes to enums
+  // https://github.com/google/protobuf.dart/issues/862
+  _addTabs(buffer, depth + 3);
+  buffer.writeln('default:');
+  _addTabs(buffer, depth + 4);
+  buffer.writeln('return \'\';');
+
   _addTabs(buffer, depth + 2);
   buffer.writeln('}');
 
